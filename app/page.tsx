@@ -66,8 +66,8 @@ const iconProps = {
 const pillars: Pillar[] = [
   {
     num: "01",
-    title: "Formación Profesional",
-    summary: "Bases sólidas, metodología y respaldo académico.",
+    title: "Formación y Perfeccionamiento",
+    summary: "Bases sólidas, respaldo académico y entrenamiento avanzado para profesionales con experiencia.",
     icon: (
       <svg {...iconProps}>
         <path d="M22 10 12 5 2 10l10 5 10-5Z" />
@@ -82,7 +82,10 @@ const pillars: Pillar[] = [
           práctica presencial guiada) y modalidad online para profesionales
           en el extranjero.
         </p>
-        <ul className="mt-5 divide-y divide-stone-200 border-t border-stone-200 max-w-xl">
+        <p className="mt-6 text-xs tracking-[0.15em] text-stone-400">
+          FORMACIÓN PROFESIONAL
+        </p>
+        <ul className="mt-3 divide-y divide-stone-200 border-t border-stone-200 max-w-xl">
           {formacionCursos.map((c) => (
             <li key={c.slug}>
               <Link
@@ -97,28 +100,15 @@ const pillars: Pillar[] = [
             </li>
           ))}
         </ul>
-      </div>
-    ),
-  },
-  {
-    num: "02",
-    title: "Perfeccionamiento",
-    summary: "Entrenamiento personalizado para profesionales con experiencia.",
-    icon: (
-      <svg {...iconProps}>
-        <circle cx="12" cy="12" r="9" />
-        <circle cx="12" cy="12" r="5" />
-        <circle cx="12" cy="12" r="1" />
-      </svg>
-    ),
-    body: (
-      <div>
-        <p className="text-stone-600 max-w-xl">
-          Dirigido a terapeutas, masajistas y esteticistas que ya cuentan con
-          formación y quieren perfeccionar lo que saben hacer. Máximo 5
-          participantes, con observación individual y corrección técnica.
+        <p className="mt-8 text-xs tracking-[0.15em] text-stone-400">
+          PERFECCIONAMIENTO
         </p>
-        <ul className="mt-5 divide-y divide-stone-200 border-t border-stone-200 max-w-xl">
+        <p className="mt-2 text-stone-600 max-w-xl text-sm">
+          Dirigido a profesionales que ya cuentan con formación y quieren
+          perfeccionar lo que saben hacer. Máximo 5 participantes, con
+          observación individual y corrección técnica.
+        </p>
+        <ul className="mt-3 divide-y divide-stone-200 border-t border-stone-200 max-w-xl">
           {perfeccionamientoProgramas.map((p) => (
             <li key={p.slug}>
               <Link
@@ -133,6 +123,29 @@ const pillars: Pillar[] = [
             </li>
           ))}
         </ul>
+      </div>
+    ),
+  },
+  {
+    num: "02",
+    title: "Actualización Internacional",
+    summary: "Referentes mundiales, cada año, para mantenernos a la vanguardia.",
+    icon: (
+      <svg {...iconProps}>
+        <circle cx="12" cy="12" r="9" />
+        <path d="M3 12h18" />
+        <path d="M12 3a14 14 0 0 1 0 18" />
+        <path d="M12 3a14 14 0 0 0 0 18" />
+      </svg>
+    ),
+    body: (
+      <div>
+        <p className="text-stone-600 max-w-xl">
+          Desde hace 12 años invitamos cada año a un experto o referente
+          internacional a Ecuador para desarrollar una formación exclusiva y
+          especializada, acercando nuevas metodologías y tendencias a los
+          profesionales del país.
+        </p>
       </div>
     ),
   },
@@ -264,10 +277,10 @@ export default function Home() {
           alt="Sándalo Center"
           className="h-14 sm:h-16 w-auto mx-auto brightness-0 invert opacity-95"
         />
-        <div className="mt-10 max-w-xl mx-auto">
+        <div className="mt-10 max-w-3xl mx-auto">
           <p className="text-blue-100 text-sm sm:text-base">
-            Formación · Perfeccionamiento · Consultoría · Talento Spa &amp;
-            Wellness
+            Formación y Perfeccionamiento · Actualización Internacional ·
+            Consultoría · Talento Spa &amp;&nbsp;Wellness
           </p>
           <p className="font-serif italic text-xl sm:text-2xl mt-9">
             27 años aprendiendo para enseñar, formando para transformar.
@@ -288,9 +301,11 @@ export default function Home() {
 
       <section className="max-w-4xl mx-auto px-6 py-14 border-b border-stone-200">
         <div className="flex flex-col sm:flex-row gap-8 items-start">
-          <div className="w-24 h-24 rounded-full bg-[#f4f0e7] flex items-center justify-center shrink-0 text-stone-400 text-xs">
-            FOTO
-          </div>
+          <img
+            src="/cristina.jpg"
+            alt="Cristina Muquinche"
+            className="w-24 h-24 rounded-full object-cover shrink-0"
+          />
           <div>
             <p className="text-xs tracking-[0.2em] text-stone-400 mb-3">
               BIENVENIDA
@@ -332,6 +347,37 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Logos de respaldo / alianzas */}
+      <section className="px-6 py-14 border-b border-stone-200">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-xs tracking-[0.2em] text-stone-400 mb-8 text-center">
+            CERTIFIQUE SUS CONOCIMIENTOS
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-10 sm:gap-14">
+            <img
+              src="/logos/ministerio-trabajo.png"
+              alt="Ministerio del Trabajo - Ecuador"
+              className="h-10 sm:h-12 w-auto"
+            />
+            <img
+              src="/logos/wso.png"
+              alt="World Spa Organization"
+              className="h-10 sm:h-12 w-auto"
+            />
+            <img
+              src="/logos/senescyt.png"
+              alt="Senescyt"
+              className="h-10 sm:h-12 w-auto"
+            />
+            <img
+              src="/logos/acess.png"
+              alt="ACESS"
+              className="h-10 sm:h-12 w-auto"
+            />
+          </div>
+        </div>
+      </section>
+
       <section className="bg-[#0b589c] text-white text-center px-6 py-16">
         <p className="font-serif text-2xl sm:text-3xl">
           ¿Lista para formarte con nosotros?
@@ -340,7 +386,7 @@ export default function Home() {
           Escríbenos y te ayudamos a elegir el programa correcto.
         </p>
         <a
-          href="https://wa.me/593991234567"
+          href="https://wa.me/593995191437"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block mt-6 bg-white text-[#0b589c] font-medium px-8 py-3 rounded-full hover:bg-blue-50"
@@ -355,8 +401,8 @@ export default function Home() {
             UBICACIÓN Y CONTACTO
           </p>
           <div className="text-blue-50 space-y-1 text-sm">
-            <p>Av. Amazonas y Naciones Unidas, Quito</p>
-            <p>+593 99 123 4567</p>
+            <p>Hidalgo de Pinto y Mariano Echeverría, sector Quito Tenis</p>
+            <p>0995541081</p>
             <p>info@sandalocenter.com</p>
             <p>Lunes a viernes, 9:00 a 18:00</p>
           </div>
@@ -370,7 +416,7 @@ export default function Home() {
               @sandalocenter (Instagram)
             </a>
             <a
-              href="https://wa.me/593991234567"
+              href="https://wa.me/593995191437"
               className="text-blue-100 hover:text-white underline underline-offset-4"
               target="_blank"
               rel="noopener noreferrer"
