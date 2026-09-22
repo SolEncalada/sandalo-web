@@ -357,22 +357,22 @@ export default function Home() {
             <img
               src="/logos/ministerio-trabajo.png"
               alt="Ministerio del Trabajo - Ecuador"
-              className="h-10 sm:h-12 w-auto"
+              className="h-14 sm:h-16 w-auto"
             />
             <img
               src="/logos/wso.png"
               alt="World Spa Organization"
-              className="h-10 sm:h-12 w-auto"
+              className="h-14 sm:h-16 w-auto"
             />
             <img
               src="/logos/senescyt.png"
               alt="Senescyt"
-              className="h-10 sm:h-12 w-auto"
+              className="h-14 sm:h-16 w-auto"
             />
             <img
               src="/logos/acess.png"
               alt="ACESS"
-              className="h-10 sm:h-12 w-auto"
+              className="h-14 sm:h-16 w-auto"
             />
           </div>
         </div>
