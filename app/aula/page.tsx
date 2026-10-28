@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation";
+import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import BotonSalir from "./BotonSalir";
 
@@ -105,14 +106,16 @@ export default async function Aula() {
                   </h2>
                   <ul className="mt-4 space-y-3">
                     {curso.clases.map((clase) => (
-                      <li
-                        key={clase.id}
-                        className="flex items-center gap-4 rounded bg-white px-4 py-3 shadow-sm"
-                      >
-                        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#0b589c] text-sm text-white">
-                          {clase.orden}
-                        </span>
-                        <span className="text-gray-800">{clase.titulo}</span>
+                      <li key={clase.id}>
+                        <Link
+                          href={`/aula/clase/${clase.id}`}
+                          className="flex items-center gap-4 rounded bg-white px-4 py-3 shadow-sm transition hover:shadow-md"
+                        >
+                          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#0b589c] text-sm text-white">
+                            {clase.orden}
+                          </span>
+                          <span className="text-gray-800">{clase.titulo}</span>
+                        </Link>
                       </li>
                     ))}
                   </ul>
