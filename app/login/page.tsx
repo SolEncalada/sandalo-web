@@ -18,7 +18,7 @@ export default function Login() {
     setCargando(true);
 
     const supabase = createClient();
-    const { error: errorLogin } = await supabase.auth.signInWithPassword({
+    const { data, error: errorLogin } = await supabase.auth.signInWithPassword({
       email: correo.trim(),
       password: clave,
     });
@@ -33,7 +33,19 @@ export default function Login() {
       return;
     }
 
-    router.push("/aula");
+    // Las administradoras entran directo al panel; las alumnas, al aula.
+    let destino = "/aula";
+    const userId = data.user?.id;
+    if (userId) {
+      const { data: ficha } = await supabase
+        .from("alumnas")
+        .select("es_admin")
+        .eq("user_id", userId)
+        .maybeSingle();
+      if (ficha?.es_admin) destino = "/admin";
+    }
+
+    router.push(destino);
     router.refresh();
   }
 

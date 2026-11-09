@@ -17,6 +17,12 @@ export default function AdminHeader() {
           <Link href="/admin/clases" className="hover:underline">
             Clases
           </Link>
+          <Link href="/admin/grupos" className="hover:underline">
+            Grupos
+          </Link>
+          <Link href="/admin/alumnas" className="hover:underline">
+            Alumnas
+          </Link>
           <Link href="/aula" className="hover:underline">
             Ver aula
           </Link>

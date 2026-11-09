@@ -14,20 +14,16 @@ async function contar(supabase: Cliente, tabla: string) {
 export default async function Admin() {
   const { supabase, nombre } = await requerirAdmin();
 
-  const [cursos, clases, grupos, alumnas, inscripciones] = await Promise.all([
-    contar(supabase, "cursos"),
+  const [clases, grupos, alumnas] = await Promise.all([
     contar(supabase, "clases"),
     contar(supabase, "grupos"),
     contar(supabase, "alumnas"),
-    contar(supabase, "inscripciones"),
   ]);
 
   const tarjetas = [
-    { titulo: "Cursos", n: cursos, href: "/admin/clases" },
     { titulo: "Clases", n: clases, href: "/admin/clases" },
-    { titulo: "Grupos", n: grupos, href: null },
-    { titulo: "Alumnas", n: alumnas, href: null },
-    { titulo: "Inscripciones", n: inscripciones, href: null },
+    { titulo: "Grupos", n: grupos, href: "/admin/grupos" },
+    { titulo: "Alumnas", n: alumnas, href: "/admin/alumnas" },
   ];
 
   return (
@@ -45,7 +41,7 @@ export default async function Admin() {
           Resumen del aula. Entra a una sección para gestionarla.
         </p>
 
-        <div className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-3">
           {tarjetas.map((t) => {
             const contenido = (
               <>

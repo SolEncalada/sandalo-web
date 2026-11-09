@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import BotonSalir from "./BotonSalir";
+import EnlacePanel from "./EnlacePanel";
 
 type Clase = { id: string; titulo: string; orden: number };
 type Curso = { id: string; titulo: string; clases: Clase[] };
@@ -69,7 +70,10 @@ export default async function Aula() {
             alt="Sándalo Center"
             className="h-10 w-auto brightness-0 invert opacity-95"
           />
-          <BotonSalir />
+          <div className="flex items-center gap-4">
+            <EnlacePanel />
+            <BotonSalir />
+          </div>
         </div>
       </header>
 

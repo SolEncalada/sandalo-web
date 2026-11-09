@@ -2,6 +2,7 @@ import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import BotonSalir from "@/app/aula/BotonSalir";
+import EnlacePanel from "@/app/aula/EnlacePanel";
 
 export default async function ClasePage({
   params,
@@ -46,7 +47,10 @@ export default async function ClasePage({
             alt="Sándalo Center"
             className="h-10 w-auto brightness-0 invert opacity-95"
           />
-          <BotonSalir />
+          <div className="flex items-center gap-4">
+            <EnlacePanel />
+            <BotonSalir />
+          </div>
         </div>
       </header>
 
